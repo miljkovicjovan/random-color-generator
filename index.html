@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Made by Jovan Miljkovic, GitHub: @miljkovicjovan. Press space to change color.">
+    <title>Random Color</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script> <!--jquery--> 
+
+    <script type="text/javascript">
+
+        // all hexadecimal characters to make a color
+        const hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
+
+        $(document).ready(function() { // when website loads
+            changeColor(); // choose a random color when loaded (normally starts with white but this way it's a random color)
+            $(document).keydown(function(e) { // everytime a key is pressed
+                if (e.keyCode == '32') { // keycode 32 is space bar
+                    changeColor();
+                }
+            });
+        });
+
+        function changeColor() {
+            let hexColor = "#"; // the start of the string
+            for (let i = 0; i < 6; i++) { // for every digit
+                hexColor += hex[getRandomNumber()]; // append a character randomly selected from the array hex
+            }
+            document.body.style.backgroundColor = hexColor; // append the color background
+        }
+
+        function getRandomNumber() { // random number generator
+            return Math.floor(Math.random() * hex.length); // returns a number from 0 to 15 to use in the hex array
+        }
+
+    </script>
+
+    </head>
+<body>
+    <h1>Press space to change color</h1>
+    <p>hold space for illusion</p>
+    <!-- Connect with me here -->
+    <footer>Made by <a href="https://github.com/miljkovicjovan">&copy;Jovan Miljkovic</a> find me on YouTube <a href="https://youtube.com/channel/UCfFtTCVL1RgsQD4F18wLg5Q">That Coder</a></footer>
+</body>
+</html>
