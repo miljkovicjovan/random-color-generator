@@ -1,2 +1,2 @@
 # random-color-generator
-Live [demo](https://random-color-jovan.netlify.app/)
+Live [demo](https://jovi-randomcolor.netlify.app/)
